@@ -37,7 +37,7 @@ $nav = [
                 $active = 'active font-weight-bold';
             }
             ?>
-            <a onclick="navClick(this)" style="border-top-right-radius: .25rem !important;border-top-left-radius: .25rem !important" class="nav-link notAJAX <?= $active ?>" data-target="<?= $prop[2] ?>" href="#">        
+            <a onclick="navClick(this)" style="border-top-right-radius: .25rem !important;border-top-left-radius: .25rem !important" class="nav-link notAJAX d-inline-block <?= $active ?>" data-target="<?= $prop[2] ?>" href="#">        
                 <?= $prop[1] .' '. $label ?>
             </a>
     <?php endforeach; ?>

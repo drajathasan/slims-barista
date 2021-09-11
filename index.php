@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2021-06-15 10:39:44
- * @modify date 2021-06-15 10:39:44
+ * @modify date 2021-09-11 18:25:45
  * @licesense GPLv3
  */
 
@@ -23,7 +23,7 @@ if (!defined('SB')) {
 }
 
 // Barista Version
-define('BARISTA_VERSION', '1.0.0-beta-2');
+define('BARISTA_VERSION', '1.0.0-beta-3');
 
 // load settings
 utility::loadSettings($dbs);
