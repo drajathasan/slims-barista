@@ -155,7 +155,10 @@ async function setStatusPlugin(el)
             parent.toastr.error(res.msg, 'Galat')
         }
     })
-    .catch(error => {alert(error)})
+    .catch(error => {
+        // set success
+        parent.toastr.error(error, 'Galat')
+    })
 }
 
 /**
@@ -188,6 +191,10 @@ async function deletePlugin(el)
             // set success
             parent.toastr.error(result.msg, 'Galat')
         }
+    })
+    .catch(error => {
+        // set success
+        parent.toastr.error(error, 'Galat')
     })
 }
 
@@ -239,6 +246,10 @@ async function checkUpdate(el, currentVersion)
             el.children[2].innerHTML = 'Tidak ada pembaharuan'
             el.classList.remove('btn-info')
             el.classList.add('btn-success')
+            el.removeEventListener('click', this)
+            el.addEventListener('click', () => {
+                alert('Upgrade')
+            }, false)
         }
     })
     .catch(error => {alert(error)})    
@@ -259,6 +270,7 @@ async function getLastListApp(el)
     // modify button
     el.classList.remove('btn-danger')
     el.classList.add('btn-info')
+    iconOne.classList.remove('d-inline-block')
     iconOne.classList.add('d-none')
     iconTwo.classList.remove('d-none')
     label.innerHTML = 'Tunggu Sebentar'
@@ -266,6 +278,9 @@ async function getLastListApp(el)
     fetch(`${httpurl}?action=updateList`)
     .then(response => response.json())
     .then(result => {
+        
+        iconTwo.classList.add('d-inline-block')
+
         if (result.status)
         {
             parent.toastr.success(result.msg, 'Sukses')
@@ -275,7 +290,11 @@ async function getLastListApp(el)
             parent.toastr.error(result.msg, 'Galat')
         }
         // set button
-        setTimeout(() => {$('#mainContent').simbioAJAX(url)}, 2000);
+        setTimeout(() => {$('#mainContent').simbioAJAX(httpurl)}, 2000);
+    })
+    .catch(error => {
+         // set success
+         parent.toastr.error(error, 'Galat')
     })
 }
 

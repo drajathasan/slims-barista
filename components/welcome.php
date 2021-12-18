@@ -28,3 +28,10 @@ if ($dbs->query('show tables like \'barista_files\'')->num_rows === 0)
     endif;
     exit;
 }
+
+if (!isBulian(940))
+{
+    components('banner.php');
+    exit('<div class="bg-danger text-white p-2 h6 font-weight-bold">Modul ini setidaknya membutuhkan minimal versi 9.4.0 atau lebih tinggi. Segera upgrade SLiMS anda.</div>');
+    exit;
+}

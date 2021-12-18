@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2021-06-19 13:13:28
- * @modify date 2021-06-19 13:13:28
+ * @modify date 2021-09-11 19:04:04
  * @desc [description]
  */
 
@@ -13,7 +13,7 @@ isDirect();
 echo <<<HTML
     <div class="w-100 block p-3 text-white">
         <button onclick="getLastListApp(this)" class="btn btn-danger float-right">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="d-inline-block bi bi-box-arrow-up" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
                 <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
             </svg>
@@ -22,7 +22,7 @@ echo <<<HTML
                 <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
                 </circle>
             </svg> 
-            <span>Perbaharui daftar</span>
+            <span class="d-inline-block">Perbaharui daftar</span>
         </button>
     </div>
 HTML;
