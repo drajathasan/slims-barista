@@ -16,6 +16,7 @@ class Skeleton
 {
     private static $Instance = null;
     private $Minify = false;
+    private $Cache = false;
     public $Conf = [];
     public $Head = [];
     public $AssetPath = '';
@@ -34,6 +35,12 @@ class Skeleton
         $this->Head['meta'][] = Element::create('meta', $Attribute);
         Element::$Close = true;
 
+        return $this;
+    }
+
+    public function setCache(bool $Status)
+    {
+        $this->Cache = $Status;
         return $this;
     }
 
@@ -116,7 +123,7 @@ class Skeleton
         $HTML = Tool::compress('end');
 
         // Make cache
-        $this->makeCache($HTML);
+        if ($this->Cache) $this->makeCache($HTML);
 
         // Ouput
         echo $HTML;

@@ -35,10 +35,18 @@ if (!function_exists('callClass'))
     }
 }
 
-if (!function_exists('simbioChangeParam'))
+if (!function_exists('moduleName'))
 {
-    function simbioChangeParam(string $Simbio, string $ChangeWith)
+    function moduleName()
     {
-        return preg_replace('/(?<=simbioAJAX\(\')(.*)(?=\',)/i', $ChangeWith, $Simbio);
+        return basename(dirname(__FILE__, 2));
+    }
+}
+
+if (!function_exists('baseUrl'))
+{
+    function baseUrl(string $AdditionalPath = '')
+    {
+        return AWB . 'modules/' . moduleName() . '/' . $AdditionalPath;
     }
 }
