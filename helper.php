@@ -638,14 +638,14 @@ function test()
  * @param boolean $exit
  * @return void
  */
-function dd($mix, bool $exit = true)
-{
-    echo '<pre>';
-    var_dump($mix);
-    echo '</pre>';
+// function dd($mix, bool $exit = true)
+// {
+//     echo '<pre>';
+//     var_dump($mix);
+//     echo '</pre>';
 
-    if ($exit) exit;
-}
+//     if ($exit) exit;
+// }
 
 /**
  * jsonExtractExists
